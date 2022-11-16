@@ -1,0 +1,9 @@
+//Python
+class Solution:
+    def findLengthOfLCIS(self, nums: List[int]) -> int:
+        previous, current, result = 0, 0, 0
+        for n in nums:
+            current = current + 1 if previous < n else 1
+            result = max(current, result)
+            previous = n
+        return result
