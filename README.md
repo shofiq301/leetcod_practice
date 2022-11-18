@@ -1,2 +1,2 @@
-# leetcod_practice
+# LeetCode daily practice
 Solution of LeetCode problems
