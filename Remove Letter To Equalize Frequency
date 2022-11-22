@@ -1,0 +1,11 @@
+//Problem link: https://leetcode.com/problems/remove-letter-to-equalize-frequency
+class Solution:
+    def equalFrequency(self, word: str) -> bool:
+        for i in range(len(word)):
+            d = collections.Counter(word)
+            d[word[i]] -= 1
+            if d[word[i]] == 0:
+                del d[word[i]]
+            if len(set(d.values())) == 1:
+                return True
+        return False
