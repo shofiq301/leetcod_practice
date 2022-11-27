@@ -1,0 +1,6 @@
+//problem link: https://leetcode.com/problems/length-of-last-word
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        str = " ".join(s.split())
+        x = str.split(" ")
+        return len(x[len(x)-1])
