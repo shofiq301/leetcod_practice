@@ -1,0 +1,21 @@
+//Problem link: https://leetcode.com/problems/buddy-strings/
+class Solution:
+    def buddyStrings(self, s: str, goal: str) -> bool:
+        if Counter(s) != Counter(goal):
+            return False
+        if s == goal:
+            uniq = set()
+            for c in s:
+                uniq.add(c)
+            if len(uniq) < len(s):
+                return True
+            else:
+                return False
+        diff = []
+        for i in range(len(s)):
+            if s[i] != goal[i]:
+                diff.append(i)
+        if len(diff) == 2 and s[diff[0]] == goal[diff[1]] and goal[diff[0]] == s[diff[1]]:
+            return True
+        else:
+            return False
